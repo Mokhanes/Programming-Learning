@@ -1,0 +1,201 @@
+<!-- HTML -- Hyper text markup language 
+html is not a programming languae It is a Markup Language !-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Learning</title>
+</head>
+<body>
+    <!-- Heading Tags-->
+    <h1>Heading:</h1>
+    <h2>Heading</h2>
+    <h3>Heading</h3>
+    <h4>Heading</h4>
+    <h5>Heading</h5>
+    <h6>Heading</h6>
+    <hr>
+
+    <h2>Paragaph:</h2>
+    <!-- Paragaph
+    <br> -- New Line 
+    <hr> -- Horizendal Line
+    <b> </b> -- Bold
+    <u> </u> -- UnderLine
+    <i> </i> -- Italic
+    <a hrec="Link" traget="blank"> </a> -- Link-->
+    
+    <p>Lorem ipsum dolor sit amet <b>consectetur</b> adipisicing elit. Saepe mollitia quos non quia repellat nostrum
+        possimus at esse neque sint, distinctio laborum voluptatem architecto
+        temporibus quo recusandae minus eligendi consequuntur.
+
+        <a href="https://www.google.com" target="blank">Google</a></p>
+
+        <p>Lorem ipsum dolor sit amet <u>consectetur</u> adipisicing elit.
+        Culpa corrupti tempora sint reprehenderit dolore, dolorem quam quas facere molestiae eum consequatur 
+        sit, nihil laboriosam fuga at odit iste. Error, corrupti. <br>
+        
+        <p>Lorem ipsum dolor sit amet <b><i>consectetur</i></b> adipisicing elit. Distinctio, 
+        harum laboriosam beatae omnis dolores laudantium aperiam natus, quis excepturi, iure reiciendis accusamus 
+        voluptates earum ut quaerat minus labore molestias sint!</p>
+        <hr>
+
+        <h2>List:</h2>
+        <!-- List 
+
+        <ul> </ul> -- unorder List
+        <li> </li> -- List Items
+        <ol> </ol> -- Order List
+        -->
+        <h3>Unordered List</h3>
+        <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+
+        <h3>Ordered List</h3>
+        <ol>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ol>
+        <hr>
+
+        <h2>Table:</h2>
+        <!-- Table
+        <hade> </hade> -- Heading
+            <tr> </tr> -- Table Row
+            <th> </th> -- Table Header
+
+        <body> <body>  -- Data
+            <td> </td> -- Table Data
+        
+    -->
+        <table>
+            <head>
+                <tr>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>Number</th>
+        
+                </tr>
+            </head>
+
+            <body>
+                <tr>
+                    <td>Raj1</td>
+                    <td>Raj@gmail.com</td>
+                    <td>564375418</td>
+                </tr>
+
+                <tr>
+                    <td>Raj2</td>
+                    <td>Raj@gmail.com</td>
+                    <td>564375418</td>
+                </tr>
+
+                <tr>
+                    <td>Raj3</td>
+                    <td>Raj@gmail.com</td>
+                    <td>564375418</td>
+                </tr>
+            </body>
+
+        </table>
+        <hr>
+
+        <h2>Form:</h2>
+        <!-- Form
+         -->
+         <form action="action" method="post">
+            
+           <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="5">
+           </div>
+           <br>
+           <div>
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number">
+           </div>
+           <br>
+           <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+           </div>
+           <br>
+           <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" placeholder="password">
+           </div>
+           <br>
+           <div>
+            <label for="color">Color:</label>
+            <input type="color" id="color" name="color">
+           </div>
+           <br>
+           <div>
+            <label for="textarea">Massage:</label>
+            <textarea name="textarea" id="textarea" cols="" rows=""></textarea>
+           </div>
+           <br>
+           <div>
+            <label for="gen">Gender:</label>
+            <select name="gen" id="gen" >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            
+            <div>
+               <br>
+               
+            <hr>
+               <h2>Radio Butten:</h2>
+               <div>
+                <input type="radio" value="good" name="feeling" id="good">
+                <label for="good">Good</label>
+               </div>
+               <div>
+                <input type="radio" value="bad" name="feeling" id="bad">
+                <label for="bad">Bad</label>
+            </div>   
+            </div>
+
+            <div>
+                <br>
+                <hr>
+                <h2>Checkbox:</h2>
+                <div>
+                 <input type="checkbox" value="good" name="feeling" id="good">
+                 <label for="good">Good</label>
+                </div>
+                <div>
+                 <input type="checkbox" value="bad" name="feeling" id="bad">
+                 <label for="bad">Bad</label>
+             </div>   
+             </div>
+           </div>
+           <br>
+          <button type="submit">Submit</button>
+           <br>
+           <hr>
+         </form>
+
+         <!-- Images -->
+         <h2>Image:</h2>
+         <div>
+            <a href="images/nature.jpg">
+            <img src="images/nature.jpg" alt="Image" width="360" height="">
+            </a>
+         </div>
+    </body>
+</html>
