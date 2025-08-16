@@ -42,10 +42,35 @@ public class BinaryTreeCreationByUser {
         inorderTraversal(node.right);
     }
 
+    public void preorderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        preorderTraversal(node.left);
+        preorderTraversal(node.right);
+    }
+
+    public void postorderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        postorderTraversal(node.left);
+        postorderTraversal(node.right);
+        System.out.print(node.data + " ");
+    }
+
     public static void main(String[] args) {
         BinaryTreeCreationByUser tree = new BinaryTreeCreationByUser();
         tree.root = 1tree.CreateTree();
+      
         System.out.println("Inorder Traversal of the binary tree:");
         tree.inorderTraversal(tree.root);
+       
+        System.out.println("\nPreorder Traversal of the binary tree:");
+        tree.preorderTraversal(tree.root);
+       
+        System.out.println("\nPostorder Traversal of the binary tree:");
+        tree.postorderTraversal(tree.root);
     }
 }
