@@ -72,7 +72,7 @@ public class FindMaximunDepth {
     
     public static void main(String[] args) {
         FindMaximunDepth tree = new FindMaximunDepth();
-        tree.root = 1tree.CreateTree();
+        tree.root = tree.CreateTree();
       
         System.out.println("Inorder Traversal of the binary tree:");
         tree.inorderTraversal(tree.root);

@@ -62,7 +62,7 @@ public class BinaryTreeCreationByUser {
 
     public static void main(String[] args) {
         BinaryTreeCreationByUser tree = new BinaryTreeCreationByUser();
-        tree.root = 1tree.CreateTree();
+        tree.root = tree.CreateTree();
       
         System.out.println("Inorder Traversal of the binary tree:");
         tree.inorderTraversal(tree.root);
