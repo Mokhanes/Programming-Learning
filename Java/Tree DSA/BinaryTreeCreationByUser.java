@@ -19,6 +19,7 @@ public class BinaryTreeCreationByUser {
         System.out.print("Enter node data (-1 for no node): ");
         Scanner ob = new Scanner(System.in);
         data = ob.nextInt();
+        ob.close();
 
         if (data == -1) {
             return null;
