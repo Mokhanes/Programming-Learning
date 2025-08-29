@@ -5,12 +5,18 @@ public class patterns {
 
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
-        int num = sc.nextInt();
-        sc.close();
-        NumberPatterns np = new NumberPatterns();
-        np.pattern1(num);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter number of rows: ");
+            int num = sc.nextInt();
+            
+            NumberPatterns np = new NumberPatterns();
+            np.pattern1(num);
+
+            StarPatterns sp = new StarPatterns();
+            sp.pattern1(num);
+
+            sc.close();
+        }
     }
 }
 
