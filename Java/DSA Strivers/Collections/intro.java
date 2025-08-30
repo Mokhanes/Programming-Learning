@@ -1,4 +1,4 @@
-import java.util.;
+import java.util.*;
 /**
  * Introduction to Collections in Java
  *
