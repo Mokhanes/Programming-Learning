@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class FindMaximunDepth {
 
-    static class Node {
+    public static class Node {
         int data;
         Node left, right;
 
@@ -17,9 +17,9 @@ public class FindMaximunDepth {
     public Node CreateTree() {
         int data;
         System.out.print("Enter node data (-1 for no node): ");
-        Scanner ob = new Scanner(System.in);
-        data = ob.nextInt();
-        ob.close();
+        try (Scanner ob = new Scanner(System.in)) {
+            data = ob.nextInt();
+        }
 
         if (data == -1) {
             return null;

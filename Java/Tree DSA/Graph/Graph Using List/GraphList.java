@@ -13,6 +13,7 @@ public class GraphList {
         }
     }
 
+    
     public void addEdge(int u, int v) {
         adjList.get(u).add(v);
         if (!isDirected) {
@@ -31,25 +32,25 @@ public class GraphList {
     }
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of vertices: ");
-        int vertices = sc.nextInt();
-        System.out.print("Is the graph directed? (Yes/No): ");
-        String directedInput = sc.next();
-        boolean isDirected = directedInput.equalsIgnoreCase("Yes");
-        
-        GraphList graph = new GraphList(vertices, isDirected);
-        System.out.print("Enter number of edges: ");
-        int edges = sc.nextInt();
-        System.out.println("Enter edges (u v):");
-        for (int i = 0; i < edges; i++) {
-            int u = sc.nextInt();
-            int v = sc.nextInt();
-            graph.addEdge(u, v);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter number of vertices: ");
+            int vertices = sc.nextInt();
+            System.out.print("Is the graph directed? (Yes/No): ");
+            String directedInput = sc.next();
+            boolean isDirected = directedInput.equalsIgnoreCase("Yes");
+            
+            GraphList graph = new GraphList(vertices, isDirected);
+            System.out.print("Enter number of edges: ");
+            int edges = sc.nextInt();
+            System.out.println("Enter edges (u v):");
+            for (int i = 0; i < edges; i++) {
+                int u = sc.nextInt();
+                int v = sc.nextInt();
+                graph.addEdge(u, v);
+            }
+            
+            System.out.println("Graph adjacency list:");
+            graph.printGraph();
         }
-
-        System.out.println("Graph adjacency list:");
-        graph.printGraph();
-        sc.close();
     }
 }
