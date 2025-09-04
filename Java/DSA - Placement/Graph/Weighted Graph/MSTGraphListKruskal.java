@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 class Edge 
@@ -18,13 +17,13 @@ class Subset
     int parent, rank;
 }
 
-public class MSTGraphList 
+public class MSTGraphListKruskal 
 {
     private Map<Integer, List<Edge>> adjList;
     private boolean isDirected;
     private String[] labels;
 
-    public MSTGraphList(int vertices, boolean isDirected) {
+    public MSTGraphListKruskal(int vertices, boolean isDirected) {
         adjList = new HashMap<>();
         this.isDirected = isDirected;
         labels = new String[vertices];
@@ -175,7 +174,7 @@ public class MSTGraphList
         System.out.print("Is the graph directed? (true/false): ");
         boolean isDirected = sc.nextBoolean();
 
-        MSTGraphList graph = new MSTGraphList(vertices, isDirected);
+        MSTGraphListKruskal graph = new MSTGraphListKruskal(vertices, isDirected);
 
         System.out.println("Enter labels for vertices (like A B C ...): ");
         String[] labels = new String[vertices];
