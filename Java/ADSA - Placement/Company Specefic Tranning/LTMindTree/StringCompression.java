@@ -20,25 +20,32 @@ public class StringCompression{
     }
 
 //Q2 - Length of the Longest SubString Without Duplicate Character
-    public static String subStringWDC(String s){
-        int max = 0;
-        List<Character> li = new ArrayList<>();
-        String res = "";
-        for(int i = 0 ;i<s.length();i++){
-            char ch = s.charAt(i);
-            if(!(li.contains(ch))){
-                li.add(ch);
-            }else if(max < li.size()){
-                max = li.size();
-                res = "";
-                for(Character c : li)
-                    res += c;
-                li.clear();
+    public static String subStringWDC(String s) {
+        int n = s.length();
+        int left = 0;  
+        int maxLen = 0;
+        int start = 0; // track start of best substring
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (int right = 0; right < n; right++) {
+            char ch = s.charAt(right);
+
+            // if char is repeated, move left pointer
+            if (map.containsKey(ch) && map.get(ch) >= left) {
+                left = map.get(ch) + 1;
+            }
+
+            map.put(ch, right);
+
+            if (right - left + 1 > maxLen) {
+                maxLen = right - left + 1;
+                start = left;
             }
         }
 
-        return res;
+        return s.substring(start, start + maxLen);
     }
+
 
 //Q3 - Given a string of characters, find the largest and the smallest word
 // if two or more words are the largest or smallest then display the one that
@@ -71,7 +78,33 @@ public class StringCompression{
         System.out.println(str1.replaceAll(str2, ""));
     }
 
-//Q-5 - 
+//Q-5 - Encryption with (-3) Characters
+    public static void encrp3(){
+
+        //(Right Shift (+3) -> (char) (((c - 'A' + s) % 26) + 'A');)
+        //(Left Shift (-3) -> (char) (((c - 'A' - s + 26) % 26) + 'A');)
+        String text = "Sanjay";
+        int s = 3;
+        StringBuffer res = new StringBuffer();
+        for(int i = 0;i<text.length();i++){
+            char c = text.charAt(i);
+            if(Character.isUpperCase(c)){
+                char ch = (char) (((c - 'A' + s) % 26) + 'A');
+                res.append(ch);
+            }else if(Character.isLowerCase(c)){
+                char ch = (char) (((c - 'a' + s) % 26) + 'a');
+                res.append(ch);
+            }else{
+                res.append(c);
+            }
+        }
+        System.out.println(res);
+    }
+
+
+
+
+//Q-6 - Encryption is needed to be done in important
     public static void main(String args[]){
         //System.out.println(compress("AAAABBBC"));
 
@@ -82,6 +115,8 @@ public class StringCompression{
         // System.out.println("The Length is : " + subStringWDC(s).length());
         // System.out.println("The SubString is : " + subStringWDC(s));
 
-        removeX();
+        //removeX();
+
+        encrp3();
     }
 }
