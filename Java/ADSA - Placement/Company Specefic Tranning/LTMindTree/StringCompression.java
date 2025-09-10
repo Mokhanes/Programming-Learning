@@ -101,10 +101,66 @@ public class StringCompression{
         System.out.println(res);
     }
 
+//Q-6 -maximum difference between any two elements such 
+//that the larger element appears after the smaller number.
 
+    public static int maxDiff(int arr[]){
+        int n = arr.length; 
+        int minElement = arr[0]; 
+        int maxDiff = arr[1] - arr[0]; 
+ 
+        for (int i = 1; i < n; i++)  
+        { 
+            maxDiff = Math.max(maxDiff, arr[i] - minElement); 
+ 
+            minElement = Math.min(minElement, arr[i]); 
+        } 
+        return maxDiff; 
+    }
 
+/* --- Day-2 [09/09/2025] --- */
 
-//Q-6 - Encryption is needed to be done in important
+/*Q-7 - Optimize Cloud Server Usage 
+ * 
+ * You are managing N cloud servers, each with a usage value given in an array usages[].Your manager 
+is only interested in the K-th smallest usage value among all servers. 
+Before the review, you are allowed to perform up to M operations. In each operation, you can 
+choose one of the currently least-used servers (if there is a tie, you can choose any of them) and 
+increase its usage by 1. 
+Your task is to determine the maximum possible value of the K-th smallest usage after performing at 
+most M operations. 
+
+Input Format 
+An integer N – the number of servers. 
+An array usages[] of size N, where each element represents the initial usage of a server. 
+Two integers: 
+K – the position of the usage value your manager is concerned with. 
+M – the maximum number of operations you can perform. 
+
+Output Format 
+A single integer – the maximum possible value of the K-th smallest usage after performing at most M 
+operations.
+*/
+
+    public static int getMaxKthUsage(int arr[], int k, int m){
+
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+        for(int i : arr)
+            q.offer(i);
+
+        for(int i =0;i<m;i++){
+            int minUsage = q.poll();
+            q.offer(minUsage+1);
+        }
+
+        int kthU = 0; 
+        for(int i = 0;i<k;i++){
+            kthU = q.poll();
+        }
+
+        return kthU;
+    }
+
     public static void main(String args[]){
         //System.out.println(compress("AAAABBBC"));
 
@@ -117,6 +173,10 @@ public class StringCompression{
 
         //removeX();
 
-        encrp3();
+        //encrp3();
+
+        int arr[] = {2,2,3,4,5};
+        System.out.println(getMaxKthUsage(arr,3,3));
+
     }
 }
