@@ -101,7 +101,7 @@ public class StringCompression{
         System.out.println(res);
     }
 
-//Q-6 -maximum difference between any two elements such 
+//Q-6 -Maximum difference between any two elements such 
 //that the larger element appears after the smaller number.
 
     public static int maxDiff(int arr[]){
@@ -161,6 +161,65 @@ operations.
         return kthU;
     }
 
+/*Q-8 Find the minimum amount Abhijeet needs to borrow */
+    public static int minimumAmountToBorrow(int N, int[] earnArray, int[] costArray) { 
+        int totalEarn = 0, totalCost = 0; 
+        for (int i = 0; i < N; i++)  
+        { 
+            totalEarn = totalEarn + earnArray[i]; 
+            totalCost = totalCost + costArray[i]; 
+        } 
+        return Math.max(0, totalCost - totalEarn); 
+    } 
+
+/*Q-9 -Vowels and Consonants */
+     public static void VowelConsonant()  
+    { 
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter a string:"); 
+        String s = sc.nextLine(); 
+ 
+        String withoutVowels = s.replaceAll("[aeiouAEIOU]", ""); 
+ 
+        int vowelCount = s.length() - withoutVowels.length(); 
+/* !---- Regex Funtions : "[]" ,"[^]" --> Excetpt That (^--> Like !) ----! */
+        int consonantCount = s.replaceAll("[^a-zA-Z]", "").length() - vowelCount; 
+ 
+        System.out.println("Vowel Count: " + vowelCount); 
+        System.out.println("Consonant Count: " + consonantCount); 
+        System.out.println("String without vowels: " + withoutVowels); 
+ 
+        sc.close(); 
+    } 
+
+/* Q-10 String Manipulation ||  Reverse Characters / String */
+    public static String reverseFullString(String str)  
+    { 
+        return new StringBuilder(str).reverse().toString(); 
+    } 
+ 
+    public static String reverseEachWord(String str)  
+    { 
+        String[] words = str.split(" "); 
+        StringBuilder result = new StringBuilder(); 
+        for (String word : words)  
+        { 
+            result.append(new StringBuilder(word).reverse().toString()).append(" "); 
+        } 
+        return result.toString().trim(); 
+    } 
+ 
+    public static String reverseWordOrder(String str)  
+    { 
+        String[] words = str.split(" "); 
+        StringBuilder result = new StringBuilder(); 
+        for (int i = words.length - 1; i >= 0; i--)  
+        { 
+            result.append(words[i]).append(" "); 
+        } 
+        return result.toString().trim(); 
+    } 
+
     public static void main(String args[]){
         //System.out.println(compress("AAAABBBC"));
 
@@ -175,8 +234,10 @@ operations.
 
         //encrp3();
 
-        int arr[] = {2,2,3,4,5};
-        System.out.println(getMaxKthUsage(arr,3,3));
+        // int arr[] = {2,2,3,4,5};
+        // System.out.println(getMaxKthUsage(arr,3,3));
+
+        VowelConsonant();
 
     }
 }
