@@ -43,59 +43,84 @@
  * - To inherit from a class, use the extends keyword.
  *
  * 
- * 
+ *  -- Dynamic binding -> Stroing Drived casss object in the base class reference variable
  * 
  * 
  */
 
+import java.util.Scanner;
 
+class Employeee{
+    private String name;
+    private int salary;
 
-// Superclass (Parent)
-class Animal {
-    String name;
+    Employeee(String name, int salary){
+        this.name = name;
+        this.salary = salary;
+    }
 
-    public Animal(String name) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
-    void eat() {
-        System.out.println(name + " is eating.");
+
+    public int getSalary() {
+        return salary;
     }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
 }
 
-// Subclass (Child) inheriting from Animal
-class Dog extends Animal {
+class Manager extends Employeee{
+    private int Bonus;
 
-    Dog(String name) {
-        super(name); // Call the constructor of the superclass (Animal)
+    Manager(String name, int salary, int Bonus){
+        super(name, salary);
+        this.Bonus = Bonus;
     }
 
-    void bark() {
-        System.out.println(name + " is barking.");
+    public int getBonus() {
+        return Bonus;
     }
+
+    public void setBonus(int bonus) {
+        Bonus = bonus;
+    }
+
+    @Override
+    public int getSalary(){
+        return super.getSalary() + this.Bonus;
+    }
+
 }
 
-class Puppy extends Dog {
-    int age;
 
-    Puppy(String name, int age) {
-        super(name); 
-        this.age = age;
-    }
-
-    void display() {
-        System.out.println("Name: " + super.name); // using super to refer to parent class field
-        super.bark(); // calling parent class method using super
-        System.out.println("Age: " + age);
-    }
-}
 
 public class Inheritance {
     public static void main(String[] args) {
-        Dog dog = new Dog("Buddy");
-        dog.eat();
-        dog.bark();
+        Scanner sc = new Scanner(System.in);
 
-        Puppy puppy = new Puppy("Max", 1);
-        puppy.display();
+        System.out.print("Enter Employee Name : ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Employee Salary : ");
+        int salary = sc.nextInt();
+
+        Employeee emp = new Employeee(name, salary);
+
+        System.out.println("Employee Name : " + emp.getName());
+        System.out.println("Employee Salary : " + emp.getSalary());
+
+        Manager m1 = new Manager("Mokhanes", 50000, 10000);
+        System.out.println("Manager Name : " + m1.getName());
+        System.out.println("Manager Salary : " + m1.getSalary());
+
+        sc.close();
     }
 }
