@@ -13,7 +13,7 @@ public class patterns {
             np.pattern1(num);
 
             StarPatterns sp = new StarPatterns();
-            sp.pattern1(num);
+            //sp.pattern1(num);
 
             sc.close();
         }
